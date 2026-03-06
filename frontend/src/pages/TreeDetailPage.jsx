@@ -336,9 +336,12 @@ const TreeDetailPage = () => {
                       {tree.photo_url ? "Alterar Foto" : "Adicionar Foto"}
                     </Button>
                   </DialogTrigger>
-                  <DialogContent>
+                  <DialogContent aria-describedby="upload-photo-description">
                     <DialogHeader>
                       <DialogTitle>Upload de Foto</DialogTitle>
+                      <p id="upload-photo-description" className="text-sm text-muted-foreground">
+                        Selecione uma foto para a árvore
+                      </p>
                     </DialogHeader>
                     <div className="space-y-4">
                       <div className="upload-preview aspect-video flex items-center justify-center cursor-pointer"
@@ -390,9 +393,12 @@ const TreeDetailPage = () => {
                           Editar
                         </Button>
                       </DialogTrigger>
-                      <DialogContent className="max-w-md">
+                      <DialogContent className="max-w-md" aria-describedby="edit-tree-description">
                         <DialogHeader>
                           <DialogTitle>Editar Árvore</DialogTitle>
+                          <p id="edit-tree-description" className="text-sm text-muted-foreground">
+                            Atualize as informações da árvore
+                          </p>
                         </DialogHeader>
                         <div className="space-y-4">
                           <div>
@@ -535,9 +541,12 @@ const TreeDetailPage = () => {
                         <Plus className="w-4 h-4" />
                       </Button>
                     </DialogTrigger>
-                    <DialogContent>
+                    <DialogContent aria-describedby="maintenance-description">
                       <DialogHeader>
                         <DialogTitle>Nova Manutenção</DialogTitle>
+                        <p id="maintenance-description" className="text-sm text-muted-foreground">
+                          Registre uma nova manutenção para esta árvore
+                        </p>
                       </DialogHeader>
                       <div className="space-y-4">
                         <div>
