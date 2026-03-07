@@ -70,7 +70,7 @@ const LandingPage = () => {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1652522104577-d442132b61b7?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85')`
+            backgroundImage: `url('/images/hero1.jpg')`
           }}
         />
         <div className="absolute inset-0 hero-overlay" />
@@ -195,8 +195,8 @@ const LandingPage = () => {
             </div>
             <div className="relative animate-fade-in stagger-2">
               <img
-                src="https://images.unsplash.com/photo-1758524052101-db20bc203b41?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85"
-                alt="Agronomist working with tablet"
+                src="/images/hero2.jpg"
+                alt="Natureza e árvores"
                 className="rounded-2xl shadow-2xl"
               />
             </div>

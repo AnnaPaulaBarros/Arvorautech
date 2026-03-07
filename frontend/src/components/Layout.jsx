@@ -78,6 +78,14 @@ const Layout = ({ children }) => {
             <p className="text-xs text-muted-foreground truncate">{user?.email}</p>
           </div>
         </div>
+        <Button
+          variant="ghost"
+          className="w-full justify-start gap-2 px-4 py-2 text-muted-foreground hover:text-destructive"
+          onClick={() => { if (onItemClick) onItemClick(); logout(); }}
+        >
+          <LogOut className="w-5 h-5" />
+          <span>Sair</span>
+        </Button>
       </div>
     </>
   );
