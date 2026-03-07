@@ -20,9 +20,9 @@ mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
 
-# Storage configuration
-STORAGE_URL = "https://integrations.emergentagent.com/objstore/api/v1/storage"
-EMERGENT_KEY = os.environ.get("EMERGENT_LLM_KEY")
+# Storage configuration - TODO: Configure your own storage provider
+STORAGE_URL = os.environ.get("STORAGE_URL", "")
+STORAGE_KEY_ENV = os.environ.get("STORAGE_KEY", "")
 APP_NAME = "arvouratech"
 storage_key = None
 
@@ -46,10 +46,11 @@ def init_storage():
     if storage_key:
         return storage_key
     try:
-        resp = requests.post(f"{STORAGE_URL}/init", json={"emergent_key": EMERGENT_KEY}, timeout=30)
-        resp.raise_for_status()
-        storage_key = resp.json()["storage_key"]
-        logger.info("Storage initialized successfully")
+        storage_key = STORAGE_KEY_ENV
+        if storage_key:
+            logger.info("Storage initialized successfully")
+        else:
+            logger.warning("STORAGE_KEY not configured")
         return storage_key
     except Exception as e:
         logger.error(f"Storage init failed: {e}")
@@ -232,10 +233,11 @@ async def exchange_session(request: Request):
     if not session_id:
         raise HTTPException(status_code=400, detail="session_id required")
     
-    # Call Emergent Auth to get session data
+    # Call Auth provider to get session data
+    auth_url = os.environ.get("AUTH_SESSION_URL", "")
     try:
         resp = requests.get(
-            "https://demobackend.emergentagent.com/auth/v1/env/oauth/session-data",
+            auth_url,
             headers={"X-Session-ID": session_id},
             timeout=30
         )

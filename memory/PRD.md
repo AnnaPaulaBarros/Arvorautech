@@ -18,16 +18,16 @@ Aplicativo fullstack chamado ArvouraTech para agrônomos e usuários cuidarem de
 ## Architecture
 - **Frontend**: React + Tailwind CSS + Shadcn/UI
 - **Backend**: FastAPI + MongoDB
-- **Auth**: Emergent Google Auth
-- **Storage**: Emergent Object Storage
+- **Auth**: Google OAuth
+- **Storage**: Object Storage
 
 ## What's Been Implemented (06/03/2026)
 - [x] Landing page com hero section e features
-- [x] Google OAuth login via Emergent Auth
+- [x] Google OAuth login
 - [x] Dashboard com Bento Grid layout
 - [x] Página de árvores com galeria
 - [x] Cadastro de árvore com GPS via Geolocation API
-- [x] Upload de fotos para Emergent Storage
+- [x] Upload de fotos para Storage
 - [x] Detalhes da árvore com edição e exclusão
 - [x] Registro de manutenção (poda, irrigação, adubação, controle biológico)
 - [x] Histórico de manutenções com filtro por tipo
