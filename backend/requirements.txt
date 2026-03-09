@@ -7,6 +7,6 @@ storage3==0.7.7
 gotrue==2.4.2
 postgrest==0.16.11
 realtime==2.0.2
-supafunc==0.4.3
+supafunc==0.4.5
 python-jose[cryptography]>=3.3.0
 python-multipart>=0.0.9
