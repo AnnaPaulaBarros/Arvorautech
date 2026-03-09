@@ -81,7 +81,7 @@ const AuthProvider = ({ children }) => {
     });
 
     return () => subscription.unsubscribe();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []); // eslint-disable-line
 
   const login = async () => {
     const { error } = await supabase.auth.signInWithOAuth({
